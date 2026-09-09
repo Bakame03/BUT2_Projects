@@ -10,4 +10,9 @@ public class Etudiant {
         prenom = p;
         moyenne = m;
     }
+
+    // méthode affiche()
+    public void affiche() {
+        System.out.println(prenom + " " + nom + " a une moyenne de " + moyenne);
+    }
 }
