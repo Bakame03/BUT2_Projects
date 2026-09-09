@@ -4,6 +4,14 @@ public class Etudiant {
     public String prenom;
     public float moyenne;
 
+    public String getNom() {
+        return nom;
+    }
+
+    public float getMoyenne() {
+        return moyenne;
+    }
+
     // constructeur recevant en paramètres un nom, un prénom et une moyenne
     public Etudiant(String n, String p, float m) {
         nom = n;

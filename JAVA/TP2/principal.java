@@ -21,6 +21,18 @@ public class principal {
             System.out.print("Le meilleur étudiant est : ");
             top.affiche();
         }
+
+        System.out.println("\n--- Étudiants ayant une moyenne < 10 ---");
+        ArrayList<Etudiant> lesRattrapages = etudiantsEnRattrapage(listeEtudiants);
+        afficherListe(lesRattrapages);
+
+        System.out.println("\n--- Tri des étudiants par nom (croissant) ---");
+        trierParNom(listeEtudiants);
+        afficherListe(listeEtudiants);
+
+        System.out.println("\n--- Tri par ordre décroissant des moyennes ---");
+        trierParMoyenneDecroissante(listeEtudiants);
+        afficherListe(listeEtudiants);
         
         System.out.println("--- Fin du test ---");
         // -------------------------------------
@@ -78,5 +90,32 @@ public class principal {
         }
 
         return meilleur; // On retourne l'objet Etudiant trouvé
+    }
+
+    // 5. Fonction qui retourne une liste des étudiants ayant des moyennes < 10
+    public static ArrayList<Etudiant> etudiantsEnRattrapage(ArrayList<Etudiant> liste) {
+        // Création de la nouvelle liste qui va contenir les étudiants ciblés
+        ArrayList<Etudiant> listeMauvaisesMoyennes = new ArrayList<Etudiant>();
+
+        // Parcours de la liste reçue en paramètre
+        for (Etudiant etud : liste) {
+            if (etud.moyenne < 10) {
+                listeMauvaisesMoyennes.add(etud); // Ajout dans la nouvelle liste
+            }
+        }
+
+        return listeMauvaisesMoyennes; // On retourne la nouvelle liste filtrée
+    }
+
+    // fonction triant la liste des étudiants selon l'ordre croissant de leurs noms
+    public static void trierParNom(ArrayList<Etudiant> liste) {
+        // Tri en utilisant Comparator.comparing avec le getter getNom (CHAP6 diapo 53)
+        liste.sort(java.util.Comparator.comparing(Etudiant::getNom));
+    }
+
+    // 7. Écrire une fonction triant la liste des étudiants selon l'ordre décroissant de leurs moyennes
+    public static void trierParMoyenneDecroissante(ArrayList<Etudiant> liste) {
+        // Tri par moyenne puis inversion de l'ordre avec .reversed() (CHAP6 diapo 54)
+        liste.sort(java.util.Comparator.comparing(Etudiant::getMoyenne).reversed());
     }
 }
