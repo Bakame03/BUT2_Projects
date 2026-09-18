@@ -1,23 +1,26 @@
- {
+{
    "name": "development",
    "version": "1.0.0",
    "description": "",
    "main": "src/index.js",
    "scripts": {
-     "start": "webpack serve --open --config webpack.dev.js",
-     "build": "webpack --config webpack.prod.js"
+      "start": "webpack serve --open --config webpack.dev.js",
+      "build": "webpack --config webpack.prod.js"
    },
    "keywords": [],
    "author": "",
    "license": "ISC",
    "devDependencies": {
-     "csv-loader": "^3.0.5",
-     "express": "^5.2.1",
-     "webpack": "^5.105.0",
-     "webpack-cli": "^7.0.0",
-     "webpack-dev-middleware": "^8.0.3",
-     "webpack-dev-server": "^5.2.3",
-     "webpack-merge": "^6.0.1",
-     "xml-loader": "^1.2.1"
+      "@babel/preset-flow": "^8.0.1",
+      "@babel/preset-react": "^8.0.1",
+      "@babel/preset-typescript": "^8.0.1",
+      "csv-loader": "^3.0.5",
+      "express": "^5.2.1",
+      "webpack": "^5.105.0",
+      "webpack-cli": "^7.0.0",
+      "webpack-dev-middleware": "^8.0.3",
+      "webpack-dev-server": "^5.2.3",
+      "webpack-merge": "^6.0.1",
+      "xml-loader": "^1.2.1"
    }
- }
+}
