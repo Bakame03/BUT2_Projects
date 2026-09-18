@@ -1,23 +1,23 @@
-{
-  "name": "webpack-demo",
-  "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch",
-    "start": "webpack serve --open",
-    "build": "webpack"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "webpack": "^5.105.0",
-    "webpack-cli": "^7.0.0",
-    "webpack-dev-server": "^5.2.3"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
-}
+ {
+   "name": "development",
+   "version": "1.0.0",
+   "description": "",
+   "main": "src/index.js",
+   "scripts": {
+     "start": "webpack serve --open --config webpack.dev.js",
+     "build": "webpack --config webpack.prod.js"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+     "csv-loader": "^3.0.5",
+     "express": "^5.2.1",
+     "webpack": "^5.105.0",
+     "webpack-cli": "^7.0.0",
+     "webpack-dev-middleware": "^8.0.3",
+     "webpack-dev-server": "^5.2.3",
+     "webpack-merge": "^6.0.1",
+     "xml-loader": "^1.2.1"
+   }
+ }
