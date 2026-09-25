@@ -1,5 +1,6 @@
 import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import Dotenv  from 'dotenv-webpack' 
 
 export default {
   entry: './src/index.js',
@@ -10,7 +11,8 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    })
+    }),
+    new Dotenv()
   ],
   module: {
     rules: [
@@ -23,6 +25,24 @@ export default {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        type: "css/auto",
+        use: [
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                quietDeps: true
+              }
+            }
+          },
+        ],
+      },
+      {
+        test: /\.tpl\.html$/i,
+        type: 'asset/source'
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
@@ -39,5 +59,8 @@ export default {
         }
       }
     ]
+  },
+  experiments: {
+    css: true,
   }
 }

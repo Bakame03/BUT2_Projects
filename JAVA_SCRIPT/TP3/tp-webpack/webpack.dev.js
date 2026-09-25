@@ -1,5 +1,6 @@
 import { merge } from 'webpack-merge'
 import commun from './webpack.common.js'
+import 'dotenv/config'; 
 
 export default merge(commun, {
   mode: 'development',
