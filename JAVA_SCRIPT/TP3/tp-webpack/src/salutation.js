@@ -1,3 +1,3 @@
 export function saluer (nom) {
-  return `Bonjour ${nom} !`
+  return `Salut ${nom} !`
 }
