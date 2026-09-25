@@ -2,18 +2,10 @@ import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 export default {
-  mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
-    path: path.resolve(import.meta.dirname, 'dist')
-  },
-  devtool: 'eval-source-map',
-  devServer: {
-    port: 8080,
-    open: true,
-    hot: true,
-    watchFiles: ['src/**/*.html']
+    path: path.resolve(import.meta.dirname, 'dist'),
+    clean: true
   },
   plugins: [
     new HtmlWebpackPlugin({
