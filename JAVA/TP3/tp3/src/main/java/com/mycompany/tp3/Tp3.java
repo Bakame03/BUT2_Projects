@@ -11,6 +11,6 @@ package com.mycompany.tp3;
 public class Tp3 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Principal.main(args);
     }
 }
